@@ -1,0 +1,86 @@
+$font-family-sans-serif:    Roboto, "Open sans", Helvetica, Arial, Helvetica, sans-serif;
+$font-size-base:            1.125rem;
+$font-size-xs:              .75rem;
+$line-height-base:          1.5;
+
+$h1-font-size:              3.5rem;
+$h2-font-size:              2.625rem;
+$h3-font-size:              2rem;
+$h4-font-size:              1.444rem;
+
+$gray-100:                  #f7f7f7;
+$gray-200:                  #f4f4f4;
+$gray-300:                  #e6e7e9;
+$gray-400:                  #BDBEC0;
+$gray-500:                  #8C8F94;
+$gray-600:                  #555659;
+$gray-700:                  #454545;
+$gray-800:                  #333333;
+$gray-900:                  #26272D;
+
+$bg-hero-color:             $gray-100;
+
+$blue:                      #4FACE2;
+$green:                     #6fc754;
+$indigo:                    #6610f2;
+$purple:                    #6f42c1;
+$pink:                      #e83e8c;
+$red:                       #ff6347;
+$orange:                    #fd7e14;
+$yellow:                    #ffc107;
+$teal:                      #20c997;
+$cyan:                      #17a2b8;
+
+$body-color:                $gray-600;
+$headings-color:            $gray-900;
+
+$theme-colors: (
+  primary:   $red,
+  secondary: $gray-600,
+  success:   $green,
+  info:      $cyan,
+  warning:   $yellow,
+  danger:    $red,
+  light:     $gray-100,
+  dark:      $gray-800
+);
+
+
+$section-padding:           140px;
+
+// CARDS
+// $card-spacer-y:            .75rem !default;
+// $card-spacer-x:            1.25rem !default;
+$card-border-width:        0;
+$card-border-radius:       0;
+// $card-border-color:        rgba($black,.125) !default;
+// $card-inner-border-radius: calc(#{$card-border-radius} - #{$card-border-width}) !default;
+// $card-cap-bg:              rgba($black, .03) !default;
+// $card-bg:                  $white !default;
+
+// $card-img-overlay-padding: 1.25rem !default;
+
+// $card-deck-margin:          ($grid-gutter-width / 2) !default;
+
+// $card-columns-count:        3 !default;
+// $card-columns-gap:          1.25rem !default;
+// $card-columns-margin:       $card-spacer-y !default;
+
+
+
+// BUTTONS
+$btn-font-weight:          normal;
+$btn-font-size:            1rem;
+
+
+$input-btn-padding-y:       .75rem;
+$input-btn-padding-x:       1.8rem;
+$input-btn-line-height:     1.25;
+
+$btn-border-radius:         0;
+$input-btn-border-width:    2px;
+
+$input-btn-padding-y-lg:    .75rem;
+$input-btn-padding-x-lg:    2rem;
+$input-btn-line-height-lg:  1.5;
+$btn-border-radius-lg:      2.5rem;

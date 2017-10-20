@@ -1,0 +1,160 @@
+doctype html
+html(lang="en")
+  head
+    title Frontend developer with backend experience for hire - Portfolio of Sergey Pozhilov
+    meta(charset="UTF-8")
+    meta(name="description", content="")
+    meta(name="author", content="Sergey Pozhilov")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+
+    link(rel="shortcut icon", href="data:image/x-icon;,", type="image/x-icon")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Sacramento|Montserrat:300|Open+Sans:300,400,600")
+    link(rel="stylesheet", href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css")
+    link(rel="stylesheet", href="assets/styles/main.css")
+
+  body#top
+
+    nav#nav.nav
+      .container
+        .nav__burger [|]
+        ul.nav__main
+          li: a.nav__link.js_nav_link(href="#top") Home
+          li: a.nav__link.js_nav_link(href="#about") About
+          li: a.nav__link.js_nav_link(href="#services") Services
+          li: a.nav__link.js_nav_link(href="#works") Works
+          li: a.nav__link.js_nav_link(href="#cnotact") Contact
+
+    header#hero.hero: #hero-content.hero__wrapper
+      h1#hero-greeting.hero__caption Good morning,
+      h2#hero-intro.hero__intro
+        | I'm Sergey Pozhilov, a frontend developer
+        | with backend experience and creative skills.
+
+    article.main
+
+      section#about.section.about
+        .container
+          .row
+            .col-sm-4
+              .about__specs
+                .about__img: img(src="assets/images/sergey.jpg")
+                .about__what
+                  span UI/UX Design.
+                  span Development.
+                  span Websites.
+                  span Web Apps.
+                ul.social.about__social
+                  li: a(href="https://github.com/pozh")
+                    i.ion &#xf233;
+                    span Github
+                  li: a(href="https://twitter.com/serggg")
+                    i.ion &#xf243;
+                    span Twitter
+                  li: a(href="mailto:sergey@pozhilov.com")
+                    i.ion &#xf2eb;
+                    span Email me
+            .col-sm-8
+              .about__intro
+                p.about__who
+                  | Struggling to find a reliable web developer who will do the job well, in time and on budget?
+                  | A developer who does not need supervision?
+                p
+                  | I'm a full stack web developer working in the industry since early 2000s.
+                  | I create nice looking, meaningful websites for clients worldwide &dash;
+                  | from individuals to startups, small and medium organizations.
+                p
+                  | So, if you don't need just a web developer, but a development partner,
+                  | I'll be glad to play that role for your business, bringing in all my experience,
+                  | taste and coding skills to help you reach your goals.
+                p
+                  span.divider
+                  strong Have a project I can help with?
+                  br
+                  br
+                  a.btn.btn-secondary(href="mailto:sergey@pozhilov.com", _target="blank") Get in touch
+
+      section#services.section.services
+        .container
+          h2.section__caption Services
+          p.section__subcaption Learn what I can do for your business
+
+          p.services__intro
+            | With more than 10 years of experience I can help you build your web project from the ground up.
+            | I can offer help from every stage of the process from design all the way through to a
+            | Content Managed or e-commerce website. Maybe I can help you out with your next project?
+
+          .services__content.row
+
+            .service.col-sm-6.col-xl-4
+              h2.service__caption
+                | Custom Web Design
+              p.service__text Add comments, raise questions, leave feedback and get updates on the progress. Add and share documents from your computer in the ticket.
+
+            .service.col-sm-6.col-xl-4
+              h2.service__caption
+                | Web Development
+              p.service__text A beautiful interface isn't complete until its grinded out with some good ol' code. We bring our projects to life using PHP, AJAX and related technologies. We write code that is fast, robust and conforms with web-standards. We listen to your plans and make some suggestions of our own to deliver a functional website that your users will love.
+
+            .service.col-sm-6.col-xl-4
+              h2.service__caption
+                | eCommerce Solutions
+              p.service__text With years of experience in eCommerce, I can develop an eCommerce solution tailored to the needs of yourself, your business, and your customers. I develop effective, efficient and well-designed eCommerce solutions to match your exact requirements.
+
+            .service.col-sm-6.col-xl-4
+              h2.service__caption
+                | Web Applications
+              p.service__text Use advanced Filters Panel to easily locate and categorize your tickets.
+
+            .service.col-sm-6.col-xl-4
+              h2.service__caption
+                | WordPress Development
+              p.service__text Once the image is uploaded, use Visual Tickets Editor to help others indicate the problem. Draw visual comments to highlight the issue and enhance readability.
+
+            .service.col-sm-6.col-xl-4
+              h2.service__caption
+                | Website Maintanance
+              p.service__text Get an email notification with a summary of changes when collaborators edit your task.
+
+
+      section#works.section.works
+        .container
+          h2.section__caption Recent Works
+          .row
+            .col-md-4
+              .card
+                img.card-img-top(src='assets/images/work1.jpg', alt='Project name')
+                .card-body
+                  h4.card-title First Project
+                  p.card-text
+                    | Some quick example text to build on the card title and make up the bulk of the card's content.
+                  a.btn.btn-primary(href='#') Go somewhere
+            .col-md-4
+              .card
+                img.card-img-top(src='assets/images/work2.png', alt='Project name')
+                .card-body
+                  h4.card-title Another Project
+                  p.card-text
+                    | Some quick example text to build on the card title and make up the bulk of the card's content.
+                  a.btn.btn-primary(href='#') Go somewhere
+            .col-md-4
+              .card
+                img.card-img-top(src='assets/images/work3.png', alt='Project name')
+                .card-body
+                  h4.card-title Third Project
+                  p.card-text
+                    | Some quick example text to build on the card title and make up the bulk of the card's content.
+                  a.btn.btn-primary(href='#') Go somewhere
+
+      section#contact.section.contact
+        p &nbsp;
+
+        p &nbsp;
+
+        p &nbsp;
+        p &nbsp;
+
+
+
+    script(src="assets/js/vendor.js")
+    script(src="assets/js/main.js")

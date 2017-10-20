@@ -1,0 +1,32 @@
+.btn, .btn-lg {
+  display: inline-block;
+  font-weight: $btn-font-weight;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: $input-btn-border-width solid transparent;
+  @include transition($btn-transition);
+
+  > * { vertical-align: middle; }
+  &:hover, &:active, &:focus { text-decoration: none; }
+}
+
+.btn { @include button-size($input-btn-padding-y, $input-btn-padding-x, $btn-font-size, $input-btn-line-height, $btn-border-radius); }
+.btn-lg { @include button-size($input-btn-padding-y-lg, $input-btn-padding-x-lg, $btn-font-size, $input-btn-line-height, $btn-border-radius-lg); }
+
+.btn-primary {
+  @include button-variant( $blue, $blue );
+  color: $white;
+}
+
+.btn-secondary {
+  @include button-outline-variant( $gray-900, $gray-100 );
+  border-color: $gray-600;
+}
+
+.btn__ico {
+  margin-right: 15px; margin-top: -2px; margin-bottom: 2px;
+
+  .btn-iright & { margin-right: auto; margin-left: 15px; }
+}
