@@ -200,8 +200,10 @@ p {
 
 
 
-// INTEXT DIVIDER
+// HELPERS
 // -----------------------------------------
+
+// intext divider
 .divider {
   display: block;
   width: 6%;
@@ -323,18 +325,33 @@ p {
   background: $gray-100;
   margin-bottom: 10px;
   padding-top: 30px;
+  display: flex;
+  flex-direction: column;
   &__caption {
     background: $white;
-    padding: 10px;
+    padding: 15px 10px 25px 10px;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    box-shadow: 0 3px 25px rgba(0,0,0,.05);
+  }
+  &__icon {
+    width: 40%;
+    margin: 0 auto 10px auto;
+    img { max-width: 100%; }
   }
 
   &__text {
+    flex: 1;
+    display: flex;
+    align-items: center;
     background: $white;
     padding: 10px;
-    font-size: 1rem;
-    height: 100%;
+    font-size: .9rem;
+    text-align: center;
+    padding: 2vh 4vh;
+    margin: 0;
+    box-shadow: 0 3px 25px rgba(0,0,0,.05);
   }
 }
 
