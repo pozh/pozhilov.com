@@ -26,13 +26,25 @@ const $heroGreeting = $('#hero-greeting');
 const $heroIntro = $('#hero-intro');
 const heroHeight = $('#hero').height();
 
+let oldScrollPos = 0;
+let scrollDelta = 0;
+
 $(window).scroll((data) => {
+
+  let scrollPos = $(window).scrollTop();
+  scrollDelta = scrollPos - oldScrollPos;
+  oldScrollPos = scrollPos;
 
   // navigation bar
   if ($(window).scrollTop() > heroHeight*.6) {
     $('#nav').addClass('nav_alt');
   } else {
     $('#nav.nav_alt').removeClass('nav_alt');
+  }
+  if (scrollDelta < -30) {
+    $('#nav').addClass('nav_delta');
+  } else if (scrollDelta > 30) {
+    $('#nav').removeClass('nav_delta');
   }
 
   // hero effects
@@ -49,4 +61,12 @@ $(window).scroll((data) => {
 $('.js_nav_link').click((e) => {
   e.preventDefault();
   scrollTo($(e.target).attr('href'));
+});
+
+// Form handler
+$("#contact-form").submit((e) => {
+  e.preventDefault();
+  let $form = $(this);
+  $.post($form.attr("action"), $form.serialize()).then(() =>
+    alert("Thank you for contacting me! I'll get back to you with a responce within 24 hours."));
 });
