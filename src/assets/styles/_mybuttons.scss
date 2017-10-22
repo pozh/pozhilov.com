@@ -16,7 +16,7 @@
 .btn-lg { @include button-size($input-btn-padding-y-lg, $input-btn-padding-x-lg, $btn-font-size, $input-btn-line-height, $btn-border-radius-lg); }
 
 .btn-primary {
-  @include button-variant( $blue, $blue );
+  @include button-variant( theme-color("primary"), theme-color("primary") );
   color: $white;
 }
 
