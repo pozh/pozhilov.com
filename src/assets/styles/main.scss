@@ -29,7 +29,7 @@ p {
   margin-bottom: 1.15em;
 }
 
-
+img { max-width: 100%; }
 
 // HERO
 // ------------------------------------------
@@ -126,19 +126,17 @@ p {
   }
 
   &_alt {
-    // @include gradient-y(rgba(255,255,255,1), rgba(255,255,255,0.6), 0%, 100%);
-    // background: $white;
 
     .nav__main {
-      // opacity: .2;
-      background: $white;
-      // padding: 20px ;
-      margin-top: 0;
-      box-shadow: 0 3px 6px rgba(0,0,0,.05);
-      // &:hover { opacity: 1; }
+      background: theme-color("primary");
+      box-shadow: inset 0 3px 0px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.1);
+      margin-top: -100px;
+      // box-shadow: ;
     }
 
-    // .nav__link { color: $white; }
+    &.nav_delta .nav__main { margin-top: 0; }
+
+    .nav__link { color: $white; }
 
     @include media-breakpoint-down(sm) {
       padding: 22px 0;
@@ -230,6 +228,8 @@ p {
   padding: $section-padding - 20px 0 $section-padding + 30px 0;
   background: $white;
 
+  &:last-child { padding-bottom: $section-padding; }
+
   &__caption {
     font-weight: normal;
     text-align: center;
@@ -241,6 +241,7 @@ p {
     color: theme-color("primary");
     margin: 0;
   }
+
   &__subcaption {
     text-align: center;
     font-size: 1.8rem;
@@ -249,9 +250,12 @@ p {
     width: 80%;
     color: $black;
     margin: $spacer * 1.7 auto;
-
   }
 
+  &__intro {
+    text-align: center;
+    padding: 0 10vh;
+  }
 }
 
 
@@ -310,11 +314,6 @@ p {
   background: $gray-100;
   @include angle(before, true);
 
-  &__intro {
-    text-align: center;
-    padding: 0 10vh;
-  }
-
   &__content {
     margin-top: 30px;
     margin-bottom: 30px;
@@ -362,150 +361,91 @@ p {
 .works {
   background: $white;
   @include angle(before, true);
-}
 
-
-
-
-
-// SECTION: TESTIMONIALS
-// ------------------------------------------
-.s-testimonials {
-  padding-bottom: 85px;
-}
-
-
-.carousel {
-  padding-top: 205px;
-  @include media-breakpoint-down(sm) {
-    padding-top: 170px;
-  }
-
-  &-indicators {
-    height: 130px;
-    top: 0;
-    @include media-breakpoint-down(sm) {
-      margin-left: 0;
-      margin-right: 0;
-      height: 90px;
-    }
-
-    li {
-      width: 90px;
-      height: 90px;
-      top: 0;
-      transform: translate3d(0, 20px, 0);
-      text-indent: 0;
-      opacity: .2;
-      border-radius: 50%;
-      margin: 0 65px;
-      cursor: pointer;
-      @include transition(all .3s ease-out);
-      @include media-breakpoint-down(md) { margin: 0 35px; }
-      @include media-breakpoint-down(sm) {
-        margin: 0 25px;
-        width: 60px;
-        height: 60px;
-        transform: translate3d(0, 12px, 0);
-      }
-
-      &:first-child { margin-left: 0;}
-      &:last-child { margin-right: 0;}
-
-      &.active {
-        width: 130px;
-        height: 130px;
-        transform: translate3d(0, 0px, 0);
-        box-shadow: 13px 37px 40px rgba(92,95,101, .128);
-        opacity: 1;
-
-        @include media-breakpoint-down(sm) {
-          width: 90px;
-          height: 90px;
-        }
-      }
-
-      img {
-        width: 100%;
-        border-radius: 50%;
-      }
-    }
-  }
-
-  &-control-prev,
-  &-control-next {
-    align-items: start;
-    width: 58px;
-    height: 130px;
-    opacity: 1;
-    @include media-breakpoint-down(sm) { display: none; }
-
-    svg {
-      width:22px; height:41px;
-      margin-top: 47px;
-      path {
-        fill: $gray-300;
-        @include transition($transition-base);
-      }
-    }
-
-    &:hover, &:active, &:focus {
-      svg path { fill: $gray-500; }
-    }
-  }
-
-  &-inner {
-    // @include clearfix;
-    margin: 0 auto;
-    text-align: center;
-    @include media-breakpoint-up(md) { width: 560px;}
-  }
-
-  &-item {
-    // @include clearfix;
+  &__list {
+    margin: 50px 0 0 0;
   }
 }
 
-.testimonial {
-  &__caption {
-    color: $black;
-    margin: 0 0 40px 0;
-      @include media-breakpoint-down(sm) { font-weight: 300; font-size: 1.6rem; }
+.work {
+  position: relative;
+
+  &__title {
+    text-transform: uppercase;
+    color: theme-color("primary");
+  }
+
+  &__services {
+    color: $gray-400;
+    font-size: .9rem;
   }
 
   &__text {
-    line-height: 1.62em;
+    margin: $spacer*2 0 0 0;
   }
 
-  $r-width: 152px;
-  $r-height: 23px;
-  &__rating {
-    position: relative;
-    width: $r-width;
-    height: $r-height;
-    display: inline-block;
-    background:url(../images/stars-5-inactive.png);
+  &__actions {
+    margin: $spacer*2 0 $spacer 0;
+  }
 
-    &:after {
+  &__img { box-shadow: 0 3px 15px rgba(0,0,0,.1); }
+
+  &__btn-visit {
+    @extend .btn-secondary;
+  }
+
+  & + .work
+  {
+    margin-top: $spacer * 6;
+
+    &:before {
       content: " ";
-      position: absolute;
       display: block;
-      width: $r-width;
-      height: $r-height;
-      background:url(../images/stars-5.png);
+      position: absolute;
+      background: theme-color("primary");
+      width: 90px;
+      height: 1px;
+      top: -$spacer*3;
+      left: 50%;
+      margin-left: -45px;
     }
   }
+}
 
-  .rating1:after { width: 30px; }
-  .rating2:after { width: 61px; }
-  .rating3:after { width: 91px; }
-  .rating4:after { width: 122px; }
-  .rating5:after { width: 152px; }
 
-  &__signature {
-    margin: 62px 0 0 0;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-size: $font-size-xs;
+
+
+// SECTION: CONTACT
+// ------------------------------------------
+.contact {
+  background: $gray-100;
+  @include angle(before, true);
+}
+
+.form-group {
+  margin-bottom: $spacer;
+}
+.form-control {
+  border: 4px solid #e3e3e3;
+  padding: 7px;
+  width: 100%;
+  padding-left: 10px;
+}
+
+
+
+// FOOTER
+// -------------------------------------------
+
+.footer {
+  z-index: 1100;
+  position: relative;
+  background: $gray-100;
+  font-size: .9rem;
+  padding-bottom: $spacer * 2;
+
+  &__copy {
+    width: 100%;
+    text-align: center;
   }
 }

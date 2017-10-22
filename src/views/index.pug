@@ -72,14 +72,13 @@ html(lang="en")
                   strong Have a project I can help with?
                   br
                   br
-                  a.btn.btn-secondary(href="mailto:sergey@pozhilov.com", _target="blank") Get in touch
+                  a.btn.btn-secondary(href="#contact") Get in touch
 
       section#services.section.services
         .container
           h2.section__caption Services
           p.section__subcaption Learn what I can do for your business
-
-          p.services__intro
+          p.section__intro
             | With more than 10 years of experience I can help you build your web project from the ground up.
             | I can offer help from every stage of the process from design all the way through to a
             | Content Managed or e-commerce website. Maybe I can help you out with your next project?
@@ -126,41 +125,86 @@ html(lang="en")
       section#works.section.works
         .container
           h2.section__caption Recent Works
-          .row
-            .col-md-4
-              .card
-                img.card-img-top(src='assets/images/work1.jpg', alt='Project name')
-                .card-body
-                  h4.card-title First Project
-                  p.card-text
-                    | Some quick example text to build on the card title and make up the bulk of the card's content.
-                  a.btn.btn-primary(href='#') Go somewhere
-            .col-md-4
-              .card
-                img.card-img-top(src='assets/images/work2.png', alt='Project name')
-                .card-body
-                  h4.card-title Another Project
-                  p.card-text
-                    | Some quick example text to build on the card title and make up the bulk of the card's content.
-                  a.btn.btn-primary(href='#') Go somewhere
-            .col-md-4
-              .card
-                img.card-img-top(src='assets/images/work3.png', alt='Project name')
-                .card-body
-                  h4.card-title Third Project
-                  p.card-text
-                    | Some quick example text to build on the card title and make up the bulk of the card's content.
-                  a.btn.btn-primary(href='#') Go somewhere
+          p.section__subcaption Selected websites and webapps I've made recently
+          p.section__intro
+            | With more than 10 years of experience I can help you build your web project from the ground up.
+            | I can offer help from every stage of the process from design all the way through to a
+            | Content Managed or e-commerce website. Maybe I can help you out with your next project?
+
+          .works__list
+            .work: .row
+              .col-md-4
+                h4.work__title Wattsense
+                p.work__services Front-end &amp; WordPress Development
+                p.work__text
+                  | WattSense is an IoT service for software deployment in indoor climate systems.
+                p.work__actions
+                  a.btn.work__btn-visit(href='http://wattsense.com', _target="blank") Visit Website
+              .col-md-8
+                  img.work__img(src='assets/images/work-wattsense.jpg', alt='Wattsense')
+            .work: .row
+              .col-md-4.order-12
+                h4.work__title Lokad
+                p.work__services Front-end, Squarespace &amp; Screwturn Wiki Development
+                p.work__text
+                  | Lokad provides business forecasting services. Robust and effective solutions for sales forecasting, inventory optimization, or staff planning.
+                p.work__actions
+                  a.btn.work__btn-visit(href='http://lokad.com', _target="blank") Visit Website
+              .col-md-8
+                  img.work__img(src='assets/images/work-lokad.jpg', alt='Lokad')
+            .work: .row
+              .col-md-4
+                h4.work__title Sendtoreader
+                p.work__services Front-end &amp; PHP Backend Development
+                p.work__text
+                  | SENDtoREADER is a webapp that instantly sends any web pages you're viewing to your Amazon Kindle ereader for future reference.
+                  | Premium users can also subscribe to their favorite RSS feeds, so they will also be delivered to the user's Kindle.
+                p.work__actions
+                  a.btn.work__btn-visit(href='http://sendtoreader.com', _target="blank") Visit Website
+              .col-md-8
+                  img.work__img(src='assets/images/work-sendtoreader.jpg', alt='Sendtoreader')
+            .work: .row
+              .col-md-4.order-12
+                h4.work__title Progressus Pro
+                p.work__services Web Design &amp; Front-end Development
+                p.work__text
+                  | Beautiful and minimal multipurpose Bootstrap theme, suitable for a small corporate website or startup. Available to purchase.
+                p.work__actions
+                  a.btn.work__btn-visit(href='http://gettemplate.com/info/progressus-pro', _target="blank") Visit Website
+              .col-md-8
+                  img.work__img(src='assets/images/work-progressus.jpg', alt='Progressus Pro - Bootstrap template')
+
 
       section#contact.section.contact
-        p &nbsp;
+        .container
+          h2.section__caption Contact
+          p.section__subcaption Looking to work together?
+          p.section__intro
+            | If you'd like to find out more about the services I offer or get a quote
+            | for a new site build, please get in touch. For site build quotes the more information
+            | you can provide me with the better (number of pages, functionality, etc).
+            | That will allow me to quickly assess the work involved and provide you with a costing
+            | and a build time estimate prior to scheduling an initial project meeting.
+            br
+            br
+            | To contact me, please use the form below, or email me directly
+            | at #[a(href="mailto:sergey@pozhilov.com", _target="blank") sergey@pozhilov.com].
 
-        p &nbsp;
+          form#contact-form(method='post', action='thank-you', data-netlify="true", name="contact")
+            fieldset
+              .form-group.row
+                  .col-sm-6
+                    input.form-control(type='text', name='order_name', placeholder='Name')
+                  .col-sm-6
+                    input.form-control(type='email', name='order_email', required='required', placeholder='Email')
+              .form-group
+                textarea.form-control(name='order_details', required='required', placeholder='About your project', rows='7', cols='113')
+              .form-group.row
+                .col-sm-12: center
+                  button.btn.btn-primary(type='submit') Submit Form
 
-        p &nbsp;
-        p &nbsp;
-
-
+    footer.footer
+      .footer__copy &copy; 2017 Sergey Pozhilov
 
     script(src="assets/js/vendor.js")
     script(src="assets/js/main.js")
