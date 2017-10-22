@@ -43,7 +43,7 @@ $(window).scroll((data) => {
   }
   if (scrollDelta < -30) {
     $('#nav').addClass('nav_delta');
-  } else if (scrollDelta > 30) {
+  } else if (scrollDelta > 3) {
     $('#nav').removeClass('nav_delta');
   }
 
