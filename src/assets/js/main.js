@@ -10,9 +10,37 @@ function scrollTo(elem) {
   }, 500);
 }
 
+function setDayTimes() {
+  let now = new Date(),
+      hours = now.getHours(),
+      bodyClass = '',
+      greetingString = 'Hello!';
+
+  if (hours > 20 || hours < 4) {
+    bodyClass = 'night';
+    greetingString = 'Good night,';
+  } else if (hours > 16) {
+    bodyClass = 'evening';
+    greetingString = 'Good evening,';
+  } else if (hours > 11) {
+    bodyClass = 'noon';
+    greetingString = 'Good afternoon,';
+  } else if (hours > 3 ) {
+    bodyClass = 'morning';
+    greetingString = 'Good morning,';
+  }
+
+  console.log(greetingString);
+
+  $('span', '#js-greeting').text(greetingString);
+  $('body').addClass(bodyClass);
+}
+
+
 
 //-------------------------------------------------------------
 
+setDayTimes();
 
 // Hero dimensions
 $('.main').css('paddingTop', window.innerHeight);
@@ -21,8 +49,9 @@ $(window).resize(() => { $('.main').css('paddingTop', window.innerHeight); });
 
 // WHILE SCROLLING....
 const $main = $('.main');
+const $nav = $('#nav');
 const $heroContent = $('#hero-content');
-const $heroGreeting = $('#hero-greeting');
+const $heroGreeting = $('#js-greeting');
 const $heroIntro = $('#hero-intro');
 const heroHeight = $('#hero').height();
 
@@ -36,12 +65,12 @@ $(window).scroll((data) => {
   oldScrollPos = scrollPos;
 
   // navigation bar
-  if ($(window).scrollTop() > heroHeight*.6) {
-    $('#nav').addClass('nav_alt');
+  if (scrollPos > heroHeight*.6) {
+    $nav.addClass('nav_alt');
   } else {
-    $('#nav.nav_alt').removeClass('nav_alt');
+    $nav.removeClass('nav_alt');
   }
-  if (scrollDelta < -30) {
+  if (scrollDelta < -30 && scrollPos > heroHeight+100) {
     $('#nav').addClass('nav_delta');
   } else if (scrollDelta > 3) {
     $('#nav').removeClass('nav_delta');
