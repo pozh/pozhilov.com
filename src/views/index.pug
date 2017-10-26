@@ -23,10 +23,10 @@ html(lang="en")
           li: a.nav__link.js_nav_link(href="#about") About
           li: a.nav__link.js_nav_link(href="#services") Services
           li: a.nav__link.js_nav_link(href="#works") Works
-          li: a.nav__link.js_nav_link(href="#cnotact") Contact
+          li: a.nav__link.js_nav_link(href="#contact") Contact
 
     header#hero.hero: #hero-content.hero__wrapper
-      h1#hero-greeting.hero__caption Good morning,
+      h1#js-greeting.hero__caption Good morning,
       h2#hero-intro.hero__intro
         | I'm Sergey Pozhilov, a frontend developer
         | with backend experience and creative skills.
@@ -72,7 +72,10 @@ html(lang="en")
                   strong Have a project I can help with?
                   br
                   br
-                  a.btn.btn-secondary(href="#contact") Get in touch
+                  a.btn.btn-secondary.js_nav_link(href="#contact") Get in touch
+                  //- span.btn-divider or
+                  a.btn.btn-link.js_nav_link(href="#services") Learn more about my services
+
 
       section#services.section.services
         .container
@@ -89,19 +92,35 @@ html(lang="en")
               h2.service__caption
                 .service__icon: img(src="assets/images/web-design-3.png", style="margin-left:-14px;")
                 | Custom Web Design
-              p.service__text Add comments, raise questions, leave feedback and get updates on the progress. Add and share documents from your computer in the ticket.
+              p.service__text
+                | As we all know, web design is not only pretty picture. Good design should balance appearance,
+                | brand messaging and functionality, with a clear and useful yet simple user experience.
+                br
+                br
+                | I'm here to help you create a website that both fits in with the desired function and goals,
+                | and makes your brand's online presence stronger.
 
             .service.col-sm-6.col-xl-4
               h2.service__caption
                 .service__icon: img(src="assets/images/web-design-7.png")
                 | Web Development
-              p.service__text A beautiful interface isn't complete until its grinded out with some good ol' code. We bring our projects to life using PHP, AJAX and related technologies. We write code that is fast, robust and conforms with web-standards. We listen to your plans and make some suggestions of our own to deliver a functional website that your users will love.
+              p.service__text
+                | A beautiful interface isn't complete until its grinded out with some good ol' code.
+                | I bring my clients' projects to life using most recent tools and techniques, modern CMS and E-Commerce
+                | solutions.
+                | My code is fast, robust and conforms with web-standards.
+                | I'm in constant contact with you, listening to your plans and requirements
+                | and trying hard to deliver a functional website that your users will love.
 
             .service.col-sm-6.col-xl-4
               h2.service__caption
                 .service__icon: img(src="assets/images/online-shop-1.png", style="margin-left:-8px;")
                 | eCommerce Solutions
-              p.service__text With years of experience in eCommerce, I can develop an eCommerce solution tailored to the needs of yourself, your business, and your customers. I develop effective, efficient and well-designed eCommerce solutions to match your exact requirements.
+              p.service__text
+                | With years of experience in general web development and eCommerce, I can develop an eCommerce
+                | solution tailored to the needs of yourself, your business, and your customers.
+                | I develop effective, efficient and well-designed eCommerce solutions utilizing Shopify, Magento,
+                | WooCommerce and other popular platforms, to match your exact requirements.
 
             .service.col-sm-6.col-xl-4
               h2.service__caption
