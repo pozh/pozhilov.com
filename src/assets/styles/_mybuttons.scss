@@ -30,3 +30,14 @@
 
   .btn-iright & { margin-right: auto; margin-left: 15px; }
 }
+
+.btn-link {
+  @include hover {
+    border-color: transparent;
+  }
+  @include hover-focus {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+    background-color: transparent;
+  }
+}
