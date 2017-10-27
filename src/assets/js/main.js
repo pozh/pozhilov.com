@@ -76,6 +76,8 @@ $(window).scroll((data) => {
     $('#nav').removeClass('nav_delta');
   }
 
+  if (scrollPos > heroHeight+100) return;
+
   // hero effects
   let offset = (heroHeight - window.scrollY) / heroHeight;
   $heroContent.css('transform', 'scale(' + (1-(1-offset)/3) + ')' + ' translate(' + (1-offset) * 30 + 'px, -' + (1-offset) * 170 + 'px)');
