@@ -82,9 +82,9 @@ $(window).scroll((data) => {
   let offset = (heroHeight - window.scrollY) / heroHeight;
   $heroContent.css('transform', 'scale(' + (1-(1-offset)/3) + ')' + ' translate(' + (1-offset) * 30 + 'px, -' + (1-offset) * 170 + 'px)');
   $heroGreeting.css('filter', 'blur(' + ((1-offset)*30) + 'px)');
-  $heroGreeting.css('opacity', .1 + offset * offset * offset);
+  $heroContent.css('opacity', .1 + offset * offset * offset);
   $heroIntro.css('filter', 'blur(' + ((1-offset)*18) + 'px)');
-  $heroIntro.css('opacity', .2 + offset * offset * offset);
+  // $heroIntro.css('opacity', .2 + offset * offset * offset);
   $heroIntro.css('transform', 'translate(0, -' + (1-offset) * 70 + 'px)');
 });
 
