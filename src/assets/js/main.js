@@ -32,7 +32,7 @@ function setDayTimes() {
 
   console.log(greetingString);
 
-  $('span', '#js-greeting').text(greetingString);
+  $('#js-greeting').text(greetingString);
   $('body').addClass(bodyClass);
 }
 

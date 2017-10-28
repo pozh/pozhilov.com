@@ -44,9 +44,21 @@ img { max-width: 100%; }
   background-size: cover;
   overflow: hidden;
 
+  .morning & { background: $white url(../images/bg-morning.jpg) no-repeat bottom center; }
+  .evening & { background: $white url(../images/bg-evening.jpg) no-repeat bottom center; }
+  .night & { background: $white url(../images/bg-night.jpg) no-repeat bottom center; }
+
   &__wrapper { text-align: center; position: relative; }
 
-  &__caption { opacity: .9; font-size: calc(1.2em + 12vw); font-family: Sacramento; }
+  &__caption {
+    opacity: .9;
+    font-size: calc(1.2em + 12vw);
+    font-family: Sacramento;
+
+    .morning &,
+    .evening &,
+    .night & { color: $white; }
+  }
   &__intro {
     font-family: "Open sans", Arial;
     font-size: calc(.9rem + .4vw); margin: 1em auto 0 auto; line-height: 1.4em;
@@ -56,6 +68,10 @@ img { max-width: 100%; }
     width: 86%;
     @include media-breakpoint-up(sm) { width: 60%; }
     @include media-breakpoint-up(lg) { width: 40%; }
+
+    .morning &,
+    .evening &,
+    .night & { color: $white;  }
   }
   p { max-width: 70%; margin-top:1em; text-align: center; }
 
@@ -66,7 +82,14 @@ img { max-width: 100%; }
     bottom: -130px;
     @include media-breakpoint-down(sm) { display: none; }
 
-    path { fill: #000; }
+    path {
+      fill: #000;
+
+      .morning &,
+      .evening &,
+      .night & { fill: $white; }
+
+    }
   }
 }
 
