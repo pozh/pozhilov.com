@@ -97,7 +97,8 @@ $('.js_nav_link').click((e) => {
 // Form handler
 $("#contact-form").submit((e) => {
   e.preventDefault();
-  let $form = $(this);
+  let $form = $("#contact-form");
+  console.log($form.attr("action"));
   $.post($form.attr("action"), $form.serialize()).then(() =>
     alert("Thank you for contacting me! I'll get back to you with a responce within 24 hours."));
 });
