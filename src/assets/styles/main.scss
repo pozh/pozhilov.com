@@ -281,7 +281,7 @@ img { max-width: 100%; }
   @include angle(before, true);
 
   &__specs {
-    @include media-breakpoint-up(sm) { width: 286px; }
+    @include media-breakpoint-up(sm) { width: 286px; max-width: 100%; }
     @include media-breakpoint-down(xs) {
       text-align: center;
     }
@@ -321,6 +321,12 @@ img { max-width: 100%; }
   }
   img {
     width: 100%;
+    @include media-breakpoint-down(xs) {
+      border-radius: 50%;
+      max-width: 60%;
+      box-shadow: 0 0 0 2px $gray-300;
+      border: 5px solid $gray-100;
+    }
   }
   &__who { font-weight: 300; font-size: 1.4em; line-height: 1.3; color: theme-color("primary"); }
   &__intro { padding-left: 3vw; }
