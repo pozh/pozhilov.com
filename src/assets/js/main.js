@@ -84,7 +84,6 @@ $(window).scroll((data) => {
   $heroGreeting.css('filter', 'blur(' + ((1-offset)*30) + 'px)');
   $heroContent.css('opacity', .1 + offset * offset * offset);
   $heroIntro.css('filter', 'blur(' + ((1-offset)*18) + 'px)');
-  // $heroIntro.css('opacity', .2 + offset * offset * offset);
   $heroIntro.css('transform', 'translate(0, -' + (1-offset) * 70 + 'px)');
 });
 
@@ -98,7 +97,6 @@ $('.js_nav_link').click((e) => {
 $("#contact-form").submit((e) => {
   e.preventDefault();
   let $form = $("#contact-form");
-  console.log($form.attr("action"));
   $.post($form.attr("action"), $form.serialize()).then(() =>
     alert("Thank you for contacting me! I'll get back to you with a responce within 24 hours."));
 });
