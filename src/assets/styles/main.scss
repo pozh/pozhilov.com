@@ -187,7 +187,7 @@ img { max-width: 100%; }
     }
 
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(xs) {
       padding: 22px 0;
       height: 68px;
     }
@@ -436,12 +436,41 @@ img { max-width: 100%; }
   @include angle(before, true);
 
   &__list {
-    margin: 50px 0 0 0;
+    margin: $spacer*5 0 0 0;
   }
 }
 
 .work {
-  position: relative;
+
+  display: flex;
+  // align-items: center;
+
+  &.reorder {
+    .work__texts {
+      @include media-breakpoint-up(sm) { text-align: right; }
+      @include media-breakpoint-up(lg) { padding: 1rem 0 0 7vh; }
+    }
+
+    .work__img {
+      @include media-breakpoint-up(sm) { margin-right: 30px; order: 1; }
+    }
+  }
+
+  &__texts {
+    flex: 1 0 0;
+    order: 2;
+    @include media-breakpoint-up(lg) { padding: 1rem 7vh 0 0; }
+  }
+
+  &__img {
+    flex: 1 0 0;
+    order: 3;
+    margin-left: 30px;
+
+    @include media-breakpoint-down(xs) { display: none; }
+
+    img { width: 100%; }
+  }
 
   &__title {
     text-transform: uppercase;
@@ -461,35 +490,27 @@ img { max-width: 100%; }
     margin: $spacer*2 0 $spacer 0;
   }
 
-  &__img {
-    @include media-breakpoint-up(sm) {
-      box-shadow: 0 0px 0 2px $gray-500;
-      border: 10px solid $white;
-    }
-  }
-
   &__btn-visit {
     @extend .btn-secondary;
   }
 
-  &__reorder {
-    @include media-breakpoint-up(sm) { order: 2; }
-  }
+
 
   & + .work {
-    margin-top: $spacer * 6;
+    margin-top: $spacer * 4;
+    position: relative;
+    @include media-breakpoint-up(sm) { margin-top: $spacer * 6; }
 
-    &:before {
+    &:before { @include media-breakpoint-down(xs) {
       content: " ";
       display: block;
       position: absolute;
       background: theme-color("primary");
-      width: 90px;
-      height: 1px;
-      top: -$spacer*3;
-      left: 50%;
-      margin-left: -45px;
-    }
+      width: 60px;
+      height: 2px;
+      top: -$spacer*2.5;
+      left: 0;
+    }}
   }
 }
 
