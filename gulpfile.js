@@ -57,7 +57,11 @@ gulp.task('styles', function () {
 
 gulp.task('images', function() {
   return gulp.src('./src/assets/images/**/*')
-    .pipe($.imagemin())
+    .pipe($.imagemin({
+      progressive: true,
+      interlaced: true,
+      optimizationLevel: 4
+    }))
     .pipe(gulp.dest('./dist/assets/images/'));
 });
 
