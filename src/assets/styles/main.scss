@@ -22,7 +22,7 @@
 html, body { height: 100%; }
 body {
   display: none;
-  &.loaded { display: initial; }
+  &.loaded { display: block; display: initial; }
 }
 
 p {
