@@ -13,6 +13,7 @@ module.exports = {
     alias: {
       'jquery': node_dir + '/jquery/dist/jquery.min.js',
       'popper': node_dir + '/popper.js/dist/umd/popper.min.js',
+      'webfont': node_dir + '/webfontloader/webfontloader.js',
       'bootstrap': node_dir + '/bootstrap/dist/js/bootstrap.min.js',
   }},
   output: {

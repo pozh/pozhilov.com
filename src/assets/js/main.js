@@ -101,4 +101,11 @@ window.init = function() {
       alert("Thank you for contacting me! I'll get back to you with a responce within 24 hours."));
   });
 
+  // Load webfonts
+  WebFont.load({
+    google: {
+      families: ['Sacramento', 'Montserrat:300', 'Open+Sans:300,400,600']
+    }
+  });
+
 }
