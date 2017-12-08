@@ -44,7 +44,7 @@ img { max-width: 100%; }
   background-size: cover;
   overflow: hidden;
 
-  .morning & { background: #CF6B00 url(../images/bg-morning.jpg) no-repeat bottom center; }
+  .morning & { background: #F7F6F2 url(../images/bg-morning2.jpg) no-repeat bottom center; }
   .evening & { background: #342D28 url(../images/bg-evening.jpg) no-repeat bottom center; }
   .night & { background: #342D28 url(../images/bg-night.jpg) no-repeat bottom center; }
 
@@ -55,7 +55,6 @@ img { max-width: 100%; }
     font-size: calc(1.2em + 12vw);
     font-family: Sacramento;
 
-    .morning &,
     .evening &,
     .night & { color: $white; }
   }
@@ -69,7 +68,6 @@ img { max-width: 100%; }
     @include media-breakpoint-up(sm) { width: 60%; }
     @include media-breakpoint-up(lg) { width: 40%; }
 
-    .morning &,
     .evening &,
     .night & { color: $white;  }
   }
@@ -85,7 +83,6 @@ img { max-width: 100%; }
     path {
       fill: #000;
 
-      .morning &,
       .evening &,
       .night & { fill: $white; }
 
@@ -112,7 +109,6 @@ img { max-width: 100%; }
     color: $black;
     @include transition($transition-base);
 
-    .morning &,
     .evening &,
     .night & { color: $white; }
 
@@ -121,7 +117,6 @@ img { max-width: 100%; }
       text-decoration: none;
       border-bottom: 2px solid $gray-800;
 
-      .morning &,
       .evening &,
       .night & {
         color: $white;
