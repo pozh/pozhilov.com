@@ -196,56 +196,6 @@ img { max-width: 100%; }
 
 
 
-// SOCIAL ICONS
-// ------------------------------------------
-.social {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-
-  li {
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-    * { vertical-align: middle; }
-    & + li { margin-left: 7px; }
-  }
-
-  a {
-    color: $gray-500;
-    text-decoration: none;
-    &:hover {
-      color: $gray-900;
-      .ion {
-        color: theme-color("primary");
-        background: $white;
-        transform: translate(0, -1px);
-        box-shadow: 0 3px 6px rgba(0,0,0,.1);
-      }
-    }
-  }
-
-  .ion {
-    font-size: 23px;
-    color: $white;
-    width: 40px;
-    height: 40px;
-    line-height: 39px;
-    border-radius: 50%;
-    background: theme-color("primary");
-    border: 1px solid theme-color("primary");
-    text-align: center;
-    margin: 0;
-    @include transition($transition-base);
-  }
-  span {
-    display: none;
-    font-size: .85rem;
-  }
-}
-
-
-
 // HELPERS
 // -----------------------------------------
 
@@ -314,6 +264,7 @@ img { max-width: 100%; }
 }
 
 
+
 // SECTION: ABOUT
 // ------------------------------------------
 .about {
@@ -325,46 +276,43 @@ img { max-width: 100%; }
       text-align: center;
     }
   }
+
   &__social {
-    margin-top: 30px;
+    margin: 40px 0 0 0;
+    padding: 0;
+    > .social { margin-bottom: 15px; }
     @include media-breakpoint-down(sm) {
       text-align: center;
       margin-top: 30px;
       margin-bottom: 30px;
     }
-
-
-    li { margin-left: 0; padding-left: 0; }
   }
+
   &__what {
     font-family: "Open sans", Arial;
     text-transform: uppercase;
-    font-size: 1.8rem;
-    font-weight: 300;
-    cursor: crosshair;
-    // text-align: center;
+    font-size: 1.1rem;
+    font-weight: 400;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 1.3rem;
+    }
+
     span {
       display: block;
       margin-top: 10px;
     }
   }
-  &__img {
-    margin-bottom: 20px; position: relative;
 
-    &:before {
-      @include media-breakpoint-up(md) {
-        position: absolute; content: " "; display: block; z-index: -1; width: 100%; height: 100%;
-        border:2px solid $gray-300; top: -10px; left: -10px;
-      }
-    }
+  &__img {
+    margin-bottom: 20px;
   }
+
   img {
     width: 100%;
+    border-radius: 10px;
     @include media-breakpoint-down(sm) {
-      border-radius: 50%;
       max-width: 60%;
-      box-shadow: 0 0 0 2px $gray-300;
-      border: 5px solid $gray-100;
     }
   }
   &__who { font-weight: 300; font-size: 1.4em; line-height: 1.3; color: theme-color("primary"); }
@@ -378,6 +326,51 @@ img { max-width: 100%; }
         margin-right: auto;
       }
     }
+  }
+}
+
+
+
+// SOCIAL ICONS
+// ------------------------------------------
+.social {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+
+  & { margin-right: 10px; }
+  * { vertical-align: middle; }
+
+  a {
+    color: $gray-500;
+    text-decoration: none;
+    &:hover {
+      color: $gray-900;
+      .ion {
+        color: theme-color("primary");
+        background: $white;
+        transform: translate(0, -1px);
+        box-shadow: 0 3px 6px rgba(0,0,0,.1);
+      }
+    }
+  }
+
+  .ion {
+    font-size: 23px;
+    color: $white;
+    width: 40px;
+    height: 40px;
+    line-height: 39px;
+    border-radius: 50%;
+    background: theme-color("primary");
+    border: 1px solid theme-color("primary");
+    text-align: center;
+    margin: 0;
+    @include transition($transition-base);
+  }
+  span {
+    display: none;
+    font-size: .85rem;
   }
 }
 
