@@ -18,11 +18,17 @@
 .btn-primary {
   @include button-variant( theme-color("primary"), theme-color("primary") );
   color: $white;
+  cursor: pointer;
 }
 
 .btn-secondary {
   @include button-outline-variant( $gray-900, $gray-100 );
   border-color: $gray-600;
+  &:hover {
+    background-color: theme-color("primary");
+    border-color: theme-color("primary");
+    color: $white;
+  }
 }
 
 .btn__ico {
