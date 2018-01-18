@@ -64,11 +64,11 @@
         bottom: 0;
 
         @if $flip {
-          transform: skewY($angle);
-          transform-origin: 0 0;
-        } @else {
           transform: skewY($angle * -1);
           transform-origin: 100%;
+        } @else {
+          transform: skewY($angle);
+          transform-origin: 0 0;
         }
       }
     }
