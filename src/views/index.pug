@@ -26,6 +26,7 @@ html(lang="en")
           li: a.nav__link.js_nav_link(href="#top") Home
           li: a.nav__link.js_nav_link(href="#about") About
           li: a.nav__link.js_nav_link(href="#services") Services
+          li: a.nav__link.js_nav_link(href="#testimonials") Testimonials
           li: a.nav__link.js_nav_link(href="#works") Works
           li: a.nav__link.js_nav_link(href="#contact") Contact
 
@@ -176,7 +177,7 @@ html(lang="en")
       section#works.section.works
         .container
           h2.section__caption Works
-          p.section__subcaption Selected websites I've made
+          p.section__subcaption Selected websites &amp; webapps
 
           .works__list
             .work
@@ -210,17 +211,49 @@ html(lang="en")
                   a.btn.work__btn-visit(href='http://sendtoreader.com', target="_blank") Visit Website
               .work__img
                   img(src='assets/images/work-sendtoreader.png', alt='Sendtoreader')
-            .work.reorder
-              .work__texts
-                h4.work__title Progressus Pro
-                p.work__services Web Design &amp; Front-end Development
-                p.work__text
-                  | Beautiful and minimal multipurpose Bootstrap theme, suitable for a small corporate website or startup. Available to purchase.
-                p.work__actions
-                  a.btn.work__btn-visit(href='http://gettemplate.com/info/progressus-pro', target="_blank") Visit Website
-              .work__img
-                  img(src='assets/images/work-progressus.png', alt='Progressus Pro - Bootstrap template')
 
+      section#testimonials.section.testimonials
+        .container
+          .testimonial
+            .testimonial__text-container: .testimonial__text
+              | Finally after years of pain and torment, I found a real coder!
+              | Sergey not only knows his stuff technically, but he understands things fast,
+              | never gets anything wrong, goes the extra mile to make things work,
+              | doesn't get too mad when the spec changes slightly, and delivers on time every time.
+              | Nice guy too. If you have a coding job and his skills fit then this
+              | is the guy you need to be hiring, guaranteed.
+            .testimonial__author
+              .testimonial__avatar
+                img(src="assets/images/tom.png")
+              p.testimonial__name Tom Lewis
+              p.testimonial__info Managing Director, Firstexact Ltd
+
+          .testimonial
+            .testimonial__text-container: .testimonial__text
+              | It's been a pleasure working with Sergey on developing our new website.
+              | He always gives you recommendations on how to do things as well as
+              | being very creative when it comes design. We have also been very happy
+              | with him being able to meet short dead lines and would recommend
+              | Sergey to anyone who is looking to develop a new website.
+            .testimonial__author
+              .testimonial__avatar
+                img(src="assets/images/lars.jpg")
+              p.testimonial__name Lars Gimbringer
+              p.testimonial__info Managing Director, Optimity R&amp;D
+
+          .testimonial
+            .testimonial__text-container: .testimonial__text
+              | Sergey was able to produce a quality and cohesive user
+              | experience for our site. He was able to digest a broad number
+              | of technologies in a short period of time and integrate our custom
+              | logo and theme across those technologies and our site.
+              | Without Sergey's help we would not have been able to launch this year.
+              | No one else was up to the task.
+            .testimonial__author
+              .testimonial__avatar
+                img(src="assets/images/andrew.jpg")
+              p.testimonial__name Andrew C. Oliver
+              p.testimonial__info Former Board Member, Open Source Initiative (OSI)
 
       section#contact.section.contact
         .container
@@ -234,7 +267,7 @@ html(lang="en")
             br
             br
             | To contact me, please use the form below, or email me directly
-            | at #[a(href="mailto:sergey@pozhilov.com", _target="blank") sergey@pozhilov.com].
+            | at #[a(href="mailto:hello@serg.studio", _target="blank") hello@serg.studio].
 
           form#contact-form(method='post', action='thank-you', data-netlify="true", name="contact")
             fieldset
@@ -250,7 +283,7 @@ html(lang="en")
                   button.btn.btn-primary(type='submit') Submit Form
 
     footer.footer
-      .footer__copy &copy; 2017 Sergey Pozhilov
+      .footer__copy &copy; 2017 serg.studio
 
     script(src="assets/js/main.js")
     script(async, src="assets/js/vendor.js", onload="init()")
