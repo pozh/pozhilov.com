@@ -266,24 +266,10 @@ html(lang="en")
             | provide you with a costing and a build time estimate.
             br
             br
-            | To contact me, please use the form below, or email me directly
-            | at #[a(href="mailto:hello@serg.studio", _target="blank") hello@serg.studio].
-
-          form#contact-form(method='post', action='thank-you', data-netlify="true", name="contact")
-            fieldset
-              .form-group.row
-                  .col-sm-6
-                    input.form-control(type='text', name='order_name', placeholder='Name')
-                  .col-sm-6
-                    input.form-control(type='email', name='order_email', required='required', placeholder='Email')
-              .form-group
-                textarea.form-control(name='order_details', required='required', placeholder='About your project', rows='7', cols='113')
-              .form-group.row
-                .col-sm-12: center
-                  button.btn.btn-primary(type='submit') Submit Form
+            a.btn.btn-primary(href="mailto:hello@serg.studio", _target="blank") E-mail me: hello@serg.studio
 
     footer.footer
-      .footer__copy &copy; 2017 serg.studio
+      .footer__copy &copy; 2018 serg.studio
 
     script(src="assets/js/main.js")
     script(async, src="assets/js/vendor.js", onload="init()")
