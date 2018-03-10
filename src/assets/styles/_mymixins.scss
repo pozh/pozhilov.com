@@ -1,5 +1,5 @@
 // Angled edges, for details see https://www.viget.com/articles/angled-edges-with-css-masks-and-transforms
-@mixin angle($pseudo, $flip: false, $angle: 2.5deg) {
+@mixin angle($pseudo, $flip: false, $angle: 2.2deg) {
   // Possible values for $pseudo are: before, after, both
   @if $pseudo == 'before' or $pseudo == 'after' or $pseudo == 'both' {
     position: relative;
