@@ -65,6 +65,10 @@ gulp.task('images', function() {
     .pipe(gulp.dest('./dist/assets/images/'));
 });
 
+gulp.task('stuff', function() {
+  return gulp.src('./src/_redirects')
+    .pipe(gulp.dest('./dist/'));
+});
 
 gulp.task('browser-sync', function() {
   bsync({
@@ -86,7 +90,7 @@ gulp.task('watch', ['build'], function() {
 });
 
 
-gulp.task('build', ['styles', 'views', 'images', 'js']);
+gulp.task('build', ['styles', 'views', 'images', 'js' ,'stuff']);
 
 
 gulp.task('default', ['build'], function() {
