@@ -1,11 +1,14 @@
 'use strict';
 
+require('dotenv').config();
+
 var gulp = require('gulp');
 var bsync = require('browser-sync');
 var autoprefixer = require('autoprefixer');
 var watch = require('gulp-watch');
 var cssnano = require('cssnano');
 var webpack = require('webpack-stream');
+var ftp = require('vinyl-ftp');
 
 var $ = require('gulp-load-plugins')();
 
@@ -24,19 +27,12 @@ gulp.task('views', function(){
       './src/views/*.pug'
     ])
     .pipe($.pug({pretty: true}))
-    .on('error', $.util.log)
     .pipe(gulp.dest('./dist/'))
     .pipe(bsync.reload({stream: true, reloadDelay: 300}));
 });
 
 
 gulp.task('styles', function () {
-  var browsers = [
-    '> 1%',
-    'last 2 versions',
-    'Firefox ESR',
-    'Opera 12.1'
-  ];
   var sassOptions = {
     includePaths: [
       'node_modules/bootstrap/scss/',
@@ -44,7 +40,7 @@ gulp.task('styles', function () {
    //,outputStyle: 'compressed'
   };
   var plugins = [
-    autoprefixer({browsers: browsers}),
+    autoprefixer(),
     cssnano({zindex: false})
   ];
   return gulp.src('./src/assets/styles/main.scss')
@@ -90,9 +86,27 @@ gulp.task('watch', ['build'], function() {
 });
 
 
-gulp.task('build', ['styles', 'views', 'images', 'js' ,'stuff']);
+gulp.task('deploy', function () {
 
+  var conn = ftp.create({
+    host: process.env.FTP_HOST,
+    user: process.env.FTP_USERNAME,
+    password: process.env.FTP_PASSWORD,
+    parallel: 10
+  });
 
-gulp.task('default', ['build'], function() {
-  gulp.start('watch');
+  var globs = [
+    'dist/**'
+  ];
+
+  // using base = '.' will transfer everything to /public_html correctly
+  // turn off buffering in gulp.src for best performance
+  // only upload newer files
+  return gulp.src(globs, { base: '', buffer: false })
+    .pipe(conn.newer(process.env.SERVER_HOME_PATH))
+    .pipe(conn.dest(process.env.SERVER_HOME_PATH));
 });
+
+gulp.task('build', ['styles', 'views', 'images', 'js', 'stuff']);
+
+gulp.task('default', ['build']);

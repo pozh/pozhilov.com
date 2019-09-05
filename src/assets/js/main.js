@@ -28,17 +28,21 @@ function setDayTimes() {
     greetingString = 'Good morning,';
   }
 
-  console.log(greetingString);
-
   $('#js-greeting').text(greetingString);
   $('body').addClass(bodyClass);
 }
 
 
+// Telegram chat init
+window.initChat = function() {
+  window.Gram.initialize({
+    apiKey: "mYuc8v3fLo0icCgWYP8iJPo6y",
+    heroColor: "tomato",
+    locales: { title: "Let's chat", name: "Sergey" }
+  });
+}
 
-//-------------------------------------------------------------
 // Site INIT
-
 window.init = function() {
   $('body').addClass('loaded');
   setDayTimes();
@@ -94,17 +98,22 @@ window.init = function() {
   });
 
   // Form handler
+  /*
   $("#contact-form").submit((e) => {
     e.preventDefault();
     let $form = $("#contact-form");
     $.post($form.attr("action"), $form.serialize()).then(() =>
       alert("Thank you for contacting me! I'll get back to you with a responce within 24 hours."));
   });
+  */
+
+  // Stickybits
+  $('.sticky').stickybits({ useStickyClasses: true });
 
   // Load webfonts
   WebFont.load({
     google: {
-      families: ['Sacramento', 'Montserrat:300', 'Open+Sans:300,400,600']
+      families: ['Sacramento', 'Montserrat:n3', 'Open Sans:n3,n4,n6']
     }
   });
 
