@@ -1,10 +1,7 @@
 // Stickybits, only for medium to large screens
 .sticky {
     @include media-breakpoint-up(md) {
-
-        &.js-is-sticky--change {
-          position: sticky !important;
-          z-index: 0;
-        }
+      position: sticky !important;
+      z-index: 0;
     }
 }
