@@ -12,7 +12,7 @@ gulp.task("js", function() {
   return gulp
     .src("./src/assets/js/main.js")
     .pipe(webpack(require("./webpack.config.js")))
-    .pipe(gulp.dest("./dist/assets/js/"))
+    .pipe(gulp.dest("./public/assets/js/"))
     .pipe(bsync.reload({ stream: true }));
 });
 
@@ -20,7 +20,7 @@ gulp.task("views", function() {
   return gulp
     .src(["!./src/views/_*.pug", "./src/views/*.pug"])
     .pipe($.pug({ pretty: true }))
-    .pipe(gulp.dest("./dist/"))
+    .pipe(gulp.dest("./public/"))
     .pipe(bsync.reload({ stream: true, reloadDelay: 300 }));
 });
 
@@ -34,7 +34,7 @@ gulp.task("styles", function() {
     .src("./src/assets/styles/main.scss")
     .pipe($.sass(sassOptions).on("error", $.sass.logError))
     .pipe($.postcss(plugins))
-    .pipe(gulp.dest("./dist/assets/styles/"))
+    .pipe(gulp.dest("./public/assets/styles/"))
     .pipe(bsync.reload({ stream: true }));
 });
 
@@ -48,13 +48,13 @@ gulp.task("images", function() {
         optimizationLevel: 4
       })
     )
-    .pipe(gulp.dest("./dist/assets/images/"));
+    .pipe(gulp.dest("./public/assets/images/"));
 });
 
 gulp.task("browser-sync", function() {
   bsync({
     server: {
-      baseDir: "./dist/"
+      baseDir: "./public/"
     },
     ghostMode: true,
     notify: false
