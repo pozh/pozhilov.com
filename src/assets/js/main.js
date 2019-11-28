@@ -108,7 +108,7 @@ window.init = function() {
   */
 
   // Stickybits
-  $('.sticky').stickybits({ useStickyClasses: true });
+  //$('.sticky').stickybits({ useStickyClasses: true });
 
   // Load webfonts
   WebFont.load({
