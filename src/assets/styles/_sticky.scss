@@ -2,6 +2,6 @@
 .sticky {
     @include media-breakpoint-up(md) {
       position: sticky !important;
-      z-index: 0;
+      top: 0;
     }
 }
