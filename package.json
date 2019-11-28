@@ -4,6 +4,7 @@
   "description": "Front End Developer Portfolio website https://pozhilov.com",
   "main": "gulpfile.js",
   "scripts": {
+    "build": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -40,8 +41,7 @@
     "gulp-pug": "^4.0.1",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
-    "path": "^0.12.7",
-    "vinyl-ftp": "^0.6.1"
+    "path": "^0.12.7"
   },
   "dependencies": {
     "autoprefixer": "^9.6.1",
