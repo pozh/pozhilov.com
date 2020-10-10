@@ -61,14 +61,12 @@ gulp.task("browser-sync", function() {
   });
 });
 
-gulp.task("build", gulp.series("styles", "views", "images", "js", function() {}));
+gulp.task("default", gulp.series("styles", "views", "images", "js"));
 
-gulp.task("watch", gulp.series("build", function() {
+gulp.task("watch", gulp.series("default", function() {
   gulp.watch(["src/assets/images", "src/assets/images/**/*"], gulp.series("images", function(){}));
   gulp.watch("src/assets/styles/*", gulp.series("styles", function(){}));
   gulp.watch("src/assets/js/*", gulp.series("js", function(){}));
   gulp.watch("src/views/**/*.pug", gulp.series("views", function(){}));
   gulp.start("browser-sync");
 }));
-
-gulp.task("default", gulp.series("build"));
