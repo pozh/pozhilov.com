@@ -32,16 +32,6 @@ function setDayTimes() {
   $('body').addClass(bodyClass);
 }
 
-
-// Telegram chat init
-window.initChat = function() {
-  window.Gram.initialize({
-    apiKey: "mYuc8v3fLo0icCgWYP8iJPo6y",
-    heroColor: "tomato",
-    locales: { title: "Let's chat", name: "Sergey" }
-  });
-}
-
 // Site INIT
 window.init = function() {
   $('body').addClass('loaded');
