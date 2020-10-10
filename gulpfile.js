@@ -61,14 +61,14 @@ gulp.task("browser-sync", function() {
   });
 });
 
-gulp.task("watch", ["build"], function() {
-  gulp.watch(["src/assets/images", "src/assets/images/**/*"], ["images"]);
-  gulp.watch("src/assets/styles/*", ["styles"]);
-  gulp.watch("src/assets/js/*", ["js"]);
-  gulp.watch("src/views/**/*.pug", ["views"]);
+gulp.task("build", gulp.series("styles", "views", "images", "js", function() {}));
+
+gulp.task("watch", gulp.series("build", function() {
+  gulp.watch(["src/assets/images", "src/assets/images/**/*"], gulp.series("images", function(){}));
+  gulp.watch("src/assets/styles/*", gulp.series("styles", function(){}));
+  gulp.watch("src/assets/js/*", gulp.series("js", function(){}));
+  gulp.watch("src/views/**/*.pug", gulp.series("views", function(){}));
   gulp.start("browser-sync");
-});
+}));
 
-gulp.task("build", ["styles", "views", "images", "js"]);
-
-gulp.task("default", ["build"]);
+gulp.task("default", gulp.series("build"));
