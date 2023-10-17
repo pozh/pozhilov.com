@@ -1,6 +1,4 @@
-'use strict';
-window.$ = window.jQuery = require('jquery');
-// window.Popper = require ('popper');
-// require ('bootstrap');
-// require('stickybits');
-window.WebFont = require ('webfont');
+var jquery = require("jquery");
+window.$ = window.jQuery = jquery;
+var webfont = require("webfontloader");
+window.WebFont = webfont;

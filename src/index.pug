@@ -3,16 +3,15 @@ html(lang="en")
   head
     title Full stack web developer specializing in SPAs and MVPs for startups and ecommerce. React / VueJS / PHP / etc.
     meta(charset="UTF-8")
-    meta(name="description", content="Hi there! I'm a full stack web developer specializing in making SPAs and MVPs for online antrepreneours")
+    meta(name="description", content="Hi there! I'm a full stack web developer specializing in making SPAs and websites for small businesses and startups")
     meta(name="author", content="Sergey Pozhilov")
     meta(name="viewport", content="width=device-width, initial-scale=1")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="google-site-verification", content="mYM9IyTUoZqbF3aM8IWU8TFoYkjV3ZjFc5te3KWRiTs")
 
-    link(rel="shortcut icon", href="data:image/x-icon;,", type="image/x-icon")
+    link(rel="shortcut icon", href="assets/images/icon.png", type="image/x-icon")
     link(rel="stylesheet", href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css")
-    link(rel="stylesheet", href="assets/styles/main.css")
-    //- link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Sacramento&display=swap")
+    link(rel="stylesheet", href="assets/styles/main.scss")
 
     | <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter46987566 = new Ya.Metrika({ id:46987566, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/46987566" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 
@@ -23,7 +22,7 @@ html(lang="en")
         .nav__burger [|]
         ul.nav__main
           li: a.nav__link.js_nav_link(href="#top") About
-          li: a.nav__link.js_nav_link(href="#skillset") Skillset
+          li: a.nav__link.js_nav_link(href="#stack") Teck stack
           li: a.nav__link.js_nav_link(href="#testimonials") Testimonials
           li: a.nav__link.js_nav_link(href="#contact") Contact
 
@@ -33,8 +32,8 @@ html(lang="en")
         small My name is Sergey.
         br
         small
-          | I am a freelance full stack developer specializing in React and VueJS web apps,
-          | who loves making Figma prototypes a reality
+          | I am a seasoned full stack developer specializing in single page application (SPA) development,
+          | who loves making clients' dreams a reality
         br
       svg.hero__scroll(viewBox="0 0 26 55", version="1.1", xmlns="http://www.w3.org/2000/svg", xmlns:xlink="http://www.w3.org/1999/xlink", xml:space="preserve", style="fill-rule:evenodd; clip-rule:evenodd; stroke-linejoin:round; stroke-miterlimit:1.41421;")
         g(transform="matrix(1,0,0,1,-709.965,-212.988)")
@@ -48,17 +47,14 @@ html(lang="en")
             .col-md-4
               .about__specs
                 .about__img: img(src="assets/images/sergey.jpg")
-                //- .about__what
-                //-   span React &amp; VueJS Apps
-                //-   span WordPress Sites
-                //-   span Ecommerce Solutions
+                .about__what
+                  span React &amp; VueJS Apps
+                  span WordPress Sites
+                  span Ecommerce Solutions
                 ul.about__social
                   li.social: a(href="https://github.com/pozh", target="_blank")
                     i.ion &#xf233;
                     span Github
-                  li.social: a(href="https://dribbble.com/Serggg", target="_blank")
-                    i.ion &#xf22d;
-                    span Dribbble
                   li.social: a(href="https://twitter.com/serggg", target="_blank")
                     i.ion &#xf243;
                     span Twitter
@@ -91,18 +87,17 @@ html(lang="en")
 
 
 
-      #skillset.section.invert.sticky.skills
+      #stack.section.invert.sticky.skills
         .container
           h2.section__caption Skillset
 
           .row.mt-5.justify-content-center: .col-lg-10
 
             p.text-center
-              | Almost the 2 decades of being a developer and designer there's been quite a few
-              | languages, frameworks, and tools that were used in the process.
-
-              | The following list is not exhaustive and does not designate my limitations (of course).
-              | It's just representing the tech stack I'm currently using in my professional life.
+              | The list provided below is not exhaustive and merely represents the range of tech stacks that I am
+              | currently employing across various projects.
+              | The selection of technologies for your project will depend on its specific requirements and can
+              | be determined through further discussion.
 
           .skills.mt-5
             .row.justify-content-center: .col-sm-10.col-lg-8: .row
@@ -110,28 +105,26 @@ html(lang="en")
                   fieldset
                     legend Frontend
                     ul
-                      li JavaScript
+                      li Javascript
+                      li Typescript
                       li React
                       li VueJS
-                      li Redux
-                      li VueX
-                      li jQuery
-                      li ES5/ES6
-                      li HTML5
-                      li Pug/Jade
-                      li CSS/SASS
+                      li Next
+                      li Nuxt
+                      li SASS
+                      li Tailwind
+                      li etc
 
               .col
                 fieldset
                   legend Backend
                   ul
+                    li Express
                     li PHP
-                    li Python
+                    li Laravel
                     li MySQL
                     li REST
-                    li Laravel
-                    li WordPress
-                    li Flask
+                    li Python
                     li Django
               .col
                 fieldset
@@ -143,10 +136,8 @@ html(lang="en")
                 fieldset
                   legend Misc
                   ul
-                    li BEM Architecture
-                    li Bootstrap
-                    li Bulma
-
+                    li Software design and architecture
+                    li 20+ years of experience
 
       #testimonials.section.testimonials
         .container
@@ -206,7 +197,7 @@ html(lang="en")
             p &nbsp;
 
     footer.footer
-      .footer__copy Copyright &copy; 2020 Sergey Pozhilov
+      .footer__copy Copyright &copy; 2023 Sergey Pozhilov
 
     script(src="assets/js/main.js")
-    script(async, src="assets/js/vendor.js", onload="init()")
+    script(async, src="assets/js/vendor.js", onload="init()" type="module")

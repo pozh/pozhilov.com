@@ -1,15 +1,13 @@
 @import "myvariables";
-
-// From Bootstrap
-@import "mixins";
-@import "functions";
-@import "variables";
-@import "reboot";
-@import "bootstrap-grid";
-@import "utilities";
-@import "carousel";
-@import "card";
-@import "type";
+@import "node_modules/bootstrap/scss/mixins";
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/reboot";
+@import "node_modules/bootstrap/scss/bootstrap-grid";
+@import "node_modules/bootstrap/scss/utilities";
+@import "node_modules/bootstrap/scss/carousel";
+@import "node_modules/bootstrap/scss/card";
+@import "node_modules/bootstrap/scss/type";
 
 @import "mybuttons";
 @import "mymixins";
