@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/pozh/pozhilov.com#readme",
   "devDependencies": {
-    "@parcel/transformer-pug": "2.10.0",
+    "@parcel/transformer-pug": "^2.10.0",
     "@parcel/transformer-sass": "2.10.0",
     "parcel": "^2.10.0"
   },
