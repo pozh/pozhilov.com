@@ -103,7 +103,7 @@ window.init = function() {
   // Load webfonts
   WebFont.load({
     google: {
-      families: ['Sacramento', 'Montserrat:n3', 'Open Sans:n3,n4,n6']
+      families: ['Sacramento:display=swap', 'Montserrat:n3&display=swap', 'Open Sans:n3,n4,n6&display=swap']
     }
   });
 
